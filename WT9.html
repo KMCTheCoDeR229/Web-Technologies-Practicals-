@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Growing and Shrinking Text</title>
+</head>
+<body>
+    <h2 id="text">WEB TECH</h2>
+
+    <script>
+        let size = 60;
+        let growing = true;
+
+        function changeText() {
+            let element = document.getElementById("text");
+
+            element.style.fontSize = size + "px";
+
+            if (growing) {
+                size += 2;
+                if (size >= 40) {
+                    growing = false;
+                }
+            } else {
+                size -= 2;
+                if (size <= 10) {
+                    growing = true;
+                }
+            }
+        }
+
+        setInterval(changeText, 200);
+    </script>
+</body>
+</html>
